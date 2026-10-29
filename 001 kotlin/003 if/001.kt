@@ -1,28 +1,17 @@
 /*
- * Asigna a `description`:
- *   - menos de 10 grados  -> "frío"
- *   - menos de 25 grados  -> "templado"
- *   - en otro caso        -> "caliente"
+ * Implementa `maxOf` en una sola línea usando `if`.
+ * La versión de tres parámetros ya está hecha y reutiliza la tuya.
  *
  * Salida esperada:
- *   5 grados es frío
- *   18 grados es templado
- *   31 grados es caliente
+ *   7
+ *   -1
  */
 
-fun describe(temperature: Int): String {
-    val description = if (temperature < 10) {
-        "frio"
-    } else if (temperature < 25) {
-        "templado"
-    } else {
-        "caliente"
-    }
-    return "$temperature grados es $description"
-}
+fun maxOf(a: Int, b: Int): Int = if (a > b) a else b
+
+fun maxOf(a: Int, b: Int, c: Int): Int = maxOf(maxOf(a, b), c)
 
 fun main() {
-    println(describe(5))
-    println(describe(18))
-    println(describe(31))
+    println(maxOf(3, 7))
+    println(maxOf(-5, -1, -3))
 }
