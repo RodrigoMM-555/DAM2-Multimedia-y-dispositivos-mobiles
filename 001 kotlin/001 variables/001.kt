@@ -17,5 +17,8 @@ fun main() {
     val baker = "Marta"
     var cookies = 4
 
-    TODO()
+    cookies = 20
+    val boxes = cookies/COOKIES_PER_BOX
+    println("${baker} completa ${boxes} cajas")
+
 }
