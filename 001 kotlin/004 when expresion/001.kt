@@ -1,23 +1,23 @@
 /*
- * Implementa `checkAccess` con un `when` como sentencia:
- *   - si el usuario está en `bannedUsers` -> imprime "<user>: acceso denegado"
- *   - si el usuario es "root" o "admin" -> imprime "<user>: bienvenido"
- *   - cualquier otro usuario -> no imprime nada.
+ * Implementa `dayType` con un `when` con argumento usado como expresión:
+ *   - del 1 al 5     -> "Entre semana"
+ *   - 6 o 7          -> "Fin de semana"
+ *   - cualquier otro -> "Día no válido"
  *
  * Salida esperada:
- *   root: bienvenido
- *   elena: acceso denegado
- *   admin: bienvenido
+ *   Entre semana
+ *   Fin de semana
+ *   Día no válido
  */
 
-val bannedUsers = listOf("elena", "pablo")
-
-fun checkAccess(user: String) {
-    TODO()
+fun dayType(day: Int): String = when(day) {
+    in 1..5 -> "Entre semana"
+    6,7 -> "Fin de semana"
+    else -> "Dia no valido"
 }
 
 fun main() {
-    for (user in listOf("root", "alicia", "elena", "admin")) {
-        checkAccess(user)
-    }
+    println(dayType(3))
+    println(dayType(7))
+    println(dayType(9))
 }
