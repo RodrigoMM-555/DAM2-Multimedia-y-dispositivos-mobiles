@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">ListaCompra</string>
-</resources>
+    <string name="screen_title">Lista de la compra</string>
+    <string name="product_hint">Nombre del producto</string>
+    <string name="add_button">Añadir</string>
+    <string name="empty_list">Todavía no hay productos</string>
+    <string name="add_product_description">Añadir producto</string>
+    <string name="bought_description">Producto comprado</string>
+    <string name="not_bought_description">Producto pendiente</string>
+    <string name="delete_product_description">Eliminar producto</string>
+
+    <plurals name="pending_products">
+        <item quantity="one">%d producto pendiente</item>
+        <item quantity="other">%d productos pendientes</item>
+    </plurals></resources>
