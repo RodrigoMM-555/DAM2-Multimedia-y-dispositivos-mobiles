@@ -15,6 +15,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.pluralStringResource
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.unit.dp
 import com.example.listacompra.R
 import com.example.listacompra.data.Producto
 
@@ -38,12 +39,18 @@ fun ListaCompraScreen(
             .padding(dimensionResource(R.dimen.screen_padding))
     ) {
 
+        // Título de la aplicación.
         Text(
             text = stringResource(R.string.screen_title),
             style = MaterialTheme.typography.headlineMedium
         )
 
-        Row {
+        // Fila para introducir y añadir productos.
+        Row(
+            modifier = Modifier.fillMaxWidth(),
+            verticalAlignment = Alignment.CenterVertically,
+            horizontalArrangement = Arrangement.spacedBy(8.dp)
+        ) {
             OutlinedTextField(
                 value = nombreProducto,
                 onValueChange = { nombreProducto = it },
@@ -88,9 +95,12 @@ fun ListaCompraScreen(
                 pendientes
             ),
             style = MaterialTheme.typography.bodyLarge,
-            modifier = Modifier.padding(vertical = dimensionResource(R.dimen.screen_padding) / 2)
+            modifier = Modifier.padding(
+                vertical = dimensionResource(R.dimen.screen_padding) / 2
+            )
         )
 
+        // Si no hay productos, mostramos un mensaje.
         if (productos.isEmpty()) {
 
             Box(
@@ -105,6 +115,7 @@ fun ListaCompraScreen(
 
         } else {
 
+            // Si hay productos, mostramos la lista.
             LazyColumn {
                 items(
                     items = productos,
@@ -114,7 +125,7 @@ fun ListaCompraScreen(
                     Card(
                         modifier = Modifier
                             .fillMaxWidth()
-                            .padding(vertical = dimensionResource(R.dimen.screen_padding) / 4)
+                            .padding(vertical = 4.dp)
                     ) {
 
                         Box(
@@ -160,7 +171,7 @@ fun ListaCompraScreen(
                                 }
                             }
 
-                            // Icono de estado situado en la esquina superior derecha.
+                            // Icono de estado centrado a la derecha.
                             IconButton(
                                 onClick = {
                                     val indice = productos.indexOf(producto)
@@ -171,7 +182,7 @@ fun ListaCompraScreen(
                                         )
                                     }
                                 },
-                                modifier = Modifier.align(Alignment.TopEnd)
+                                modifier = Modifier.align(Alignment.CenterEnd)
                             ) {
                                 Icon(
                                     imageVector = if (producto.comprado) {
