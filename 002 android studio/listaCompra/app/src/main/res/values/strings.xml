@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">ShoppingList</string>
+    <string name="screen_title">Shopping List</string>
+    <string name="product_hint">Product name</string>
+    <string name="add_button">Add</string>
+    <string name="empty_list">There are no products yet</string>
+    <string name="add_product_description">Add product</string>
+    <string name="bought_description">Product purchased</string>
+    <string name="not_bought_description">Pending product</string>
+    <string name="delete_product_description">Delete product</string>
+
+    <plurals name="pending_products">
+        <item quantity="one">%d pending product</item>
+        <item quantity="other">%d pending products</item>
+    </plurals>
+</resources>
